@@ -1,0 +1,25 @@
+*{
+    color: black;
+    font-family: 'Merriweather';
+}
+
+.card{
+    background-color: #EAEAEA;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 1.5vw;
+}
+
+.date{
+    font-family: 'Courier Prime';
+    color: #8E8E8E;
+}
+
+.author{
+    font-weight: bold;
+}
+
+.content{
+}

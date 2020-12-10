@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@font-face {
+    font-family: 'IM Fell Double Pica';
+    src: url(/assets/fonts/IMFellDoublePica-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'Judson';
+    src: url(/assets/fonts/Judson-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'Courier Prime';
+    src: url(/assets/fonts/CourierPrime-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'Merriweather';
+    src: url(/assets/fonts/Merriweather-Regular.ttf) format("truetype");
+}
