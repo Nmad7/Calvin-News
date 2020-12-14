@@ -7,11 +7,6 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 // Serve static files....
 app.use(express.static(__dirname + '/dist/CalvinNews'));
 
-// Send all requests to index.html
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/CalvinNews/index.html'));
-});
-
 const options = {
   target: 'https://calvin-cs262-fall2020-teamc.herokuapp.com',
   pathRewrite: {
@@ -21,7 +16,12 @@ const options = {
 
 const apiProxy = createProxyMiddleware('/api', options);
 
-app.use(apiProxy);
+app.use('/api', apiProxy);
+
+// Send all requests to index.html
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/dist/CalvinNews/index.html'));
+});
 
 // default Heroku PORT
 app.listen(process.env.PORT || 3000);
