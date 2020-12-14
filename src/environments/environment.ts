@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://calvin-cs262-fall2020-teamc.herokuapp.com/'
+  apiUrl: '/api/'
 };
 
 /*
