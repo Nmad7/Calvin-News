@@ -17,11 +17,9 @@ app.use('/api', createProxyMiddleware({
   secure: true,
   changeOrigin: true,
   pathRewrite: {
-    '^/api': ''
+    '^/api':''
   },
 }));
-
-app.use('/api', proxy('https://calvin-cs262-fall2020-teamc.herokuapp.com'));
 
 // default Heroku PORT
 app.listen(process.env.PORT || 3000);
