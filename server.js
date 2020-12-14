@@ -19,20 +19,18 @@ const apiProxy = createProxyMiddleware('/api', options);
 
 app.use('/api', apiProxy);
 
+const unless = function(path, middleware) {
+  return function(req, res, next) {
+      if (path === req.path) {
+          return next();
+      } else {
+          return middleware(req, res, next);
+      }
+  };
+};
+
 // Send all requests to index.html
-app.get('/latest-news', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/CalvinNews/index.html'));
-});
-
-app.get('/about', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/CalvinNews/index.html'));
-});
-
-app.get('/search', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/CalvinNews/index.html'));
-});
-
-app.get('/preferences', function(req, res) {
+app.get(/\/((?!api).)*/, function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/CalvinNews/index.html'));
 });
 
