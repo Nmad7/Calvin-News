@@ -19,9 +19,9 @@ const options = {
   },
 };
 
-const apiProxy = createProxyMiddleware('/api/', options);
+const apiProxy = createProxyMiddleware('/api', options);
 
-app.use('/api/', apiProxy);
+app.use(apiProxy);
 
 // default Heroku PORT
 app.listen(process.env.PORT || 3000);
