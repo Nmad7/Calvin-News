@@ -35,7 +35,6 @@ export class NewsService {
   }
 
   getNews(): Observable<any> {
-    console.log(this.endpoint+'news.v1')
     return this.http.get<News[]>(this.endpoint+'news.v1').pipe(
       retry(2),
       catchError(this.handleError)
