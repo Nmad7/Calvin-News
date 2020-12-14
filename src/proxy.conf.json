@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "https://calvin-cs262-fall2020-teamc.herokuapp.com",
+    "secure": true,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

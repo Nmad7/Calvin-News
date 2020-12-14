@@ -1,27 +1,31 @@
 .background-top{
+    position: relative;
     background-color: #8C2131;
     width: 100%;
-    height: 50%;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
+    height: 40%;
 }
 
 .background-bottom{
+    height: 60%;
+    position: relative;
     background-color: #F8F8F8;
-    z-index: -1;
 }
 
 .main-section{
+    position: absolute;
+    top: 160px;
+    left: 0;
+    right: 0;
+    margin: auto;
     background-color: #FFFFFF;
     box-shadow: -10px 6px 5px .5px rgba(0, 0, 0, 0.384);
     max-width: 80%;
-    margin: 10rem auto;
-    padding: .5rem .75rem 0 .75rem; 
+    padding: .5rem .75rem 0 .75rem;
+    min-width: 500px;
 }
 
 .header{
+    margin: 15px;
     display: flex;
     justify-content: space-between;
 }
@@ -30,16 +34,18 @@
     display: flex;
     align-items: center;
     font-family: 'Judson';
-    font-size: 1.5vw;
+    font-size: 30px;
 }
 
 .activeItem{
     text-decoration: underline;
 }
 
-h1{
+.title{
+    position: relative;
+    top: 50px;
     text-align: center;
     color: white;
     font-family: 'IM Fell Double Pica';
-    font-size: 3vw;
+    font-size: 60px;
 }

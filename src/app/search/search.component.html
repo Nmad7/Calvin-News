@@ -1,1 +1,47 @@
-<p>search works!</p>
+<div class="container">
+    <div class="searchArea">
+        <mat-form-field class="searchBar" color="accent">
+            <button mat-button matPrefix mat-icon-button aria-label="Search" (click)="onSearch()">
+                <mat-icon>search</mat-icon>
+            </button>
+            <input matInput type="text" [(ngModel)]="search" (keyup.enter)="onSearch()">
+            <button mat-button *ngIf="search" matSuffix mat-icon-button aria-label="Clear" (click)="search=''">
+            <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <span class="radioGroup">
+            Sort by:
+            <mat-radio-group aria-label="SortBy" [(ngModel)]="sortBy">
+                <mat-radio-button value="relevance">Relevance</mat-radio-button>
+                <mat-radio-button value="date">Most Recent</mat-radio-button>
+            </mat-radio-group>
+        </span>
+    </div>
+
+    <mat-spinner color="warn" *ngIf="!initialized"></mat-spinner>
+
+    <div *ngIf="initialized"
+        class="infiniteScroll"
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="50"
+        [scrollWindow]="false"
+        (scrolled)="onScroll()"
+        >
+        <div *ngFor="let news of scrollData">
+            <p></p>
+            <mat-card class="card">
+                <mat-card-header>
+                <mat-card-title class="title">{{news.title}}</mat-card-title>
+                <mat-card-subtitle>
+                    <div class=date>{{news.date.substring(0,10)}}</div>
+                    <div class=author>{{news.author}}</div>
+                </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content class=content>
+                    {{news.story}}
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

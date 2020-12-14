@@ -1,0 +1,36 @@
+<div>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span style="position: relative; margin: 0 auto; left:-40px;" fxHide.gt-sm>
+        <p *ngIf="this.router.url==='/latest-news'">Latest News</p>
+        <p *ngIf="this.router.url==='/search'">Search</p>
+        <p *ngIf="this.router.url==='/about'">About</p>
+        <p *ngIf="this.router.url==='/preferences'">Preferences</p>
+      </span>
+      <div style="flex:1;" fxLayoutAlign="space-between" fxShow="true" fxHide.lt-md>
+        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+        <a href="latest-news" mat-button>Latest News</a>
+        <a href="search" mat-button>Search</a>
+        <a href="preferences" mat-button>Preferences</a>
+        <a href="about" mat-button>About</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav mode="over" #sidenav>
+      <mat-nav-list>
+        <a href="latest-news" mat-list-item>Latest News</a>
+        <a href="search" mat-list-item>Search</a>
+        <a href="preferences" mat-list-item>Preferences</a>
+        <a href="about" mat-list-item>About</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

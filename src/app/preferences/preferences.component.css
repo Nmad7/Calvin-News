@@ -2,14 +2,11 @@
   font-family: 'Judson';
 }
 
-h1{
-  font-size: 40px;
-}
-
-p{
-  font-size: 25px;
-}
-
 div{
   height: 700px;
+}
+
+span{
+  align-items:center;
+  font-size: 30px;
 }

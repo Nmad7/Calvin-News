@@ -1,0 +1,55 @@
+*{
+  color: black;
+  font-family: 'Merriweather';
+}
+
+.container{
+  height: 700px;
+}
+
+.card{
+  background-color: #EAEAEA;
+}
+
+.title{
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.date{
+  font-family: 'Courier Prime';
+  color: #8E8E8E;
+}
+
+.author{
+  font-weight: bold;
+}
+
+.searchArea{
+  height: 20%;
+  width: 90%;
+  font-size: 20px;
+}
+
+.searchBar{
+  width: 100%;
+}
+
+.infiniteScroll{
+  height: 80%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.radioGroup{
+  height: 25%;
+}
+
+
+mat-spinner{
+  margin: 0 auto;
+}
+
+.mat-radio-button{
+  margin-left: 10px;
+}

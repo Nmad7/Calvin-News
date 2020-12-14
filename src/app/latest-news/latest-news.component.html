@@ -1,15 +1,45 @@
-<div *ngFor="let news of data">
-    <p></p>
-    <mat-card class="card">
-        <mat-card-header>
-        <mat-card-title class="title">{{news.title}}</mat-card-title>
-        <mat-card-subtitle>
-            <div class=date>{{news.date}}</div>
-            <div class=author>{{news.author}}</div>
-        </mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content class=content>
-            {{news.content}}
-        </mat-card-content>
-    </mat-card>
+<div class="container">
+    <span>Filter by </span>
+    <mat-radio-group
+        aria-labelledby="radio-filter"
+        class="radio-group"
+        [(ngModel)]="radioSelection"
+        >
+        <mat-radio-button class="example-radio-button" *ngFor="let radio of radioButtons" [value]="radio" (change)="onChange($event)">
+            {{radio}}
+        </mat-radio-button>
+    </mat-radio-group>
+
+    <mat-spinner color="warn" *ngIf="!initialized"></mat-spinner>
+
+    <div *ngIf="initialized"
+        class="infiniteScroll"
+        infiniteScroll
+        [infiniteScrollDistance]="2"
+        [infiniteScrollThrottle]="50"
+        [scrollWindow]="false"
+        (scrolled)="onScroll()"
+        >
+        <div *ngFor="let news of scrollData">
+            <mat-card class="card">
+                <mat-card-header>
+                <mat-card-title class="title">{{news.title}}</mat-card-title>
+                <mat-card-subtitle>
+                    <div class=date>{{news.date.substring(0,10)}}</div>
+                    <div class=author>{{news.author}}</div>
+                </mat-card-subtitle>
+                <mat-card-actions class="favorite">
+                    <button mat-button mat-icon-button aria-label="Favorite" (click)="onFavorite(news.uuid)">
+                        <mat-icon *ngIf="favorites.includes(news.uuid)">star</mat-icon>
+                        <mat-icon *ngIf="!favorites.includes(news.uuid)">star_border</mat-icon>
+                    </button>
+                </mat-card-actions>
+                </mat-card-header>
+                <mat-card-content class=content>
+                    {{news.story}}
+                </mat-card-content>
+            </mat-card>
+            <p></p>
+        </div>
+    </div>
 </div>

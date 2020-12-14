@@ -1,0 +1,15 @@
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-toolbar a {
+  font-size: 35px;
+}
+.mat-toolbar p {
+  font-size: 35px;
+  align-self:center;
+}
+
+.mat-sidenav a {
+  font-size: 35px;
+}
