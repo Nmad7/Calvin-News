@@ -12,14 +12,16 @@ app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname + '/dist/CalvinNews/index.html'));
 });
 
-app.use('/api', createProxyMiddleware({
+const options = {
   target: 'https://calvin-cs262-fall2020-teamc.herokuapp.com',
-  secure: true,
-  changeOrigin: true,
   pathRewrite: {
-    '^/api':''
+    '^/api/': '/', // remove base path
   },
-}));
+};
+
+const apiProxy = createProxyMiddleware('/api', options);
+
+app.use('/api', apiProxy);
 
 // default Heroku PORT
 app.listen(process.env.PORT || 3000);
