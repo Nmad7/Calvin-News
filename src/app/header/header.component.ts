@@ -4,10 +4,11 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
   router : Router;
+  isDarkTheme: boolean = false;
   constructor(router: Router) {
     this.router = router;
   }

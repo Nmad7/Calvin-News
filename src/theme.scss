@@ -76,5 +76,14 @@ $my-custom-accent: mat-palette($mat-grey, 800, 700, 900);
 $my-custom-warn: mat-palette($mat-red);
 
 $my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
-
 @include angular-material-theme($my-custom-theme);
+
+//dark theme
+$my-dark-primary: mat-palette($mat-orange);
+$my-dark-accent: mat-palette($mat-yellow);
+$my-dark-warn: mat-palette($mat-red);
+
+$my-dark-theme: mat-dark-theme($my-dark-primary, $my-dark-accent, $my-dark-warn);
+.dark-theme-mode{
+  @include angular-material-theme($my-dark-theme);
+}

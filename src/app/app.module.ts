@@ -23,6 +23,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import {OverlayModule} from '@angular/cdk/overlay';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { PreferencesComponent } from './preferences/preferences.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 const routes: Routes = [
   { path: 'about', component: AboutComponent, data: {title: 'About'}},
@@ -59,7 +60,8 @@ const routes: Routes = [
     MatSidenavModule,
     FlexLayoutModule,
     OverlayModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatSlideToggleModule
   ],
   exports: [
     RouterModule

@@ -5,7 +5,7 @@ import { NewsService, News } from '../news.service';
 @Component({
   selector: 'app-latest-news',
   templateUrl: './latest-news.component.html',
-  styleUrls: ['./latest-news.component.css']
+  styleUrls: ['./latest-news.component.scss']
 })
 export class LatestNewsComponent implements OnInit {
   data: Array<News>;
