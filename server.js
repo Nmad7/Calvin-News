@@ -9,6 +9,7 @@ app.use(express.static(__dirname + '/dist/CalvinNews'));
 
 const options = {
   target: 'https://calvin-cs262-fall2020-teamc.herokuapp.com',
+  changeOrigin:true,
   pathRewrite: {
     '^/api/': '/', // remove base path
   },
