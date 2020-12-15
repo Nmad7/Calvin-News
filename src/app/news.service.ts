@@ -19,7 +19,7 @@ export interface News {
 })
 export class NewsService {
 
-  private endpoint = environment.apiUrl;
+  private endpoint:string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
   private handleError(error: HttpErrorResponse): any {
@@ -27,11 +27,11 @@ export class NewsService {
       console.error('An error occurred:', error.error.message);
     } else {
       console.error(
-        `Backend returned code ${error.status}, ` +
-        `body was: ${error.error}`);
+        `Error code: ${error.status}, ` +
+        `Body is: ${error.error}`);
     }
     return throwError(
-      'Something bad happened; please try again later.');
+      'Something broke');
   }
 
   getNews(): Observable<any> {
