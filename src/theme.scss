@@ -4,86 +4,17 @@ $custom-typography: mat-typography-config($font-family: '"Judson", sans-serif;')
 
 @include mat-core($custom-typography);
 
-// $md-mycustomprimary: (
-//     50 : #f1e4e6,
-//     100 : #ddbcc1,
-//     200 : #c69098,
-//     300 : #af646f,
-//     400 : #9d4250,
-//     500 : #8c2131,
-//     600 : #841d2c,
-//     700 : #791825,
-//     800 : #6f141f,
-//     900 : #5c0b13,
-//     A100 : #ff9098,
-//     A200 : #ff5d69,
-//     A400 : #ff2a39,
-//     A700 : #ff1122,
-//     contrast: (
-//         50 : #000000,
-//         100 : #000000,
-//         200 : #000000,
-//         300 : #ffffff,
-//         400 : #ffffff,
-//         500 : #ffffff,
-//         600 : #ffffff,
-//         700 : #ffffff,
-//         800 : #ffffff,
-//         900 : #ffffff,
-//         A100 : #000000,
-//         A200 : #000000,
-//         A400 : #ffffff,
-//         A700 : #ffffff,
-//     )
-// );
-
-// $md-mycustomaccent: (
-//     50 : #fef9e0,
-//     100 : #fbf0b3,
-//     200 : #f9e680,
-//     300 : #f7dc4d,
-//     400 : #f5d526,
-//     500 : #f3cd00,
-//     600 : #f1c800,
-//     700 : #efc100,
-//     800 : #edba00,
-//     900 : #eaae00,
-//     A100 : #ffffff,
-//     A200 : #fff5de,
-//     A400 : #ffe7ab,
-//     A700 : #ffdf91,
-//     contrast: (
-//         50 : #000000,
-//         100 : #000000,
-//         200 : #000000,
-//         300 : #000000,
-//         400 : #000000,
-//         500 : #000000,
-//         600 : #000000,
-//         700 : #000000,
-//         800 : #000000,
-//         900 : #000000,
-//         A100 : #000000,
-//         A200 : #000000,
-//         A400 : #000000,
-//         A700 : #000000,
-//     )
-// );
-
-/* ======== Angular material custom themes ======== */
 $my-custom-primary: mat-palette($mat-grey, 50);
 $my-custom-accent: mat-palette($mat-grey, 800, 700, 900);
 $my-custom-warn: mat-palette($mat-red);
 
 $my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
-@include angular-material-theme($my-custom-theme);
+$my-custom-theme-dark: mat-dark-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
 
-//dark theme
-$my-dark-primary: mat-palette($mat-orange);
-$my-dark-accent: mat-palette($mat-yellow);
-$my-dark-warn: mat-palette($mat-red);
+.theme-dark {
+  @include angular-material-theme($my-custom-theme-dark);
+}
 
-$my-dark-theme: mat-dark-theme($my-dark-primary, $my-dark-accent, $my-dark-warn);
-.dark-theme-mode{
-  @include angular-material-theme($my-dark-theme);
+.theme-light {
+  @include angular-material-theme($my-custom-theme)
 }
