@@ -16,5 +16,8 @@ $my-custom-theme-dark: mat-dark-theme($my-custom-primary, $my-custom-accent, $my
 }
 
 .theme-light {
-  @include angular-material-theme($my-custom-theme)
+  @include angular-material-theme($my-custom-theme);
+  mat-card{
+    background-color: #EAEAEA !important;
+  }
 }
