@@ -1,6 +1,6 @@
 <div>
   <mat-toolbar>
-    <mat-toolbar-row [ngClass]="{'dark-theme-mode':isDarkTheme}">
+    <mat-toolbar-row>
       <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
         <mat-icon>menu</mat-icon>
       </button>
@@ -16,9 +16,6 @@
         <a href="search" mat-button>Search</a>
         <a href="preferences" mat-button>Preferences</a>
         <a href="about" mat-button>About</a>
-        <!-- <mat-slide-toggle [(ngModel)]="isDarkTheme">
-          Dark Theme
-        </mat-slide-toggle> -->
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

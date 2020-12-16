@@ -2,11 +2,12 @@
   font-family: 'Judson';
 }
 
-div{
+.container{
   height: 700px;
 }
 
-span{
+
+span, div{
   align-items:center;
   font-size: 30px;
 }

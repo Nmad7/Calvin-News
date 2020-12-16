@@ -6,10 +6,10 @@
   <div class=background-top>
     <div class=title>Calvin News</div>
   </div>
-  <div class=background-bottom>
+  <div class="background-bottom mat-app-background" [ngClass]="{'theme-dark': isDark,'theme-light': !isDark}">
   </div>
-  <div class=main-section>
-    <app-header></app-header>
+  <div class="main-section mat-app-background " [ngClass]="{'theme-dark': isDark,'theme-light': !isDark}">
+    <app-header [ngClass]="{'theme-dark': isDark,'theme-light': !isDark}"></app-header>
   </div>
 </body>
 </html>

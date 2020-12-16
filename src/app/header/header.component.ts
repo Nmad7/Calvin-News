@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   router : Router;
-  isDarkTheme: boolean = false;
+
   constructor(router: Router) {
     this.router = router;
   }

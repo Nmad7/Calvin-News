@@ -1,6 +1,11 @@
-<div>
+<div class="container">
   <span>
     Clear current favorites:
     <button mat-raised-button (click)="clearFavorites()"><mat-icon>delete</mat-icon></button>
   </span>
+  <div>
+    Switch to dark mode:
+    <mat-slide-toggle (change)="onDarkModeSwitched($event)" [(ngModel)]="isDark">
+    </mat-slide-toggle>
+  </div>
 </div>
