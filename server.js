@@ -1,5 +1,4 @@
 //Express server to use with heroku
-
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -8,7 +7,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 // Serve static files
 app.use(express.static(__dirname + '/dist/CalvinNews'));
 
-// create proxy options
+// create proxy options (a proxy is required due to CORS issue server side)
 const options = {
   target: 'https://calvin-cs262-fall2020-teamc.herokuapp.com',
   changeOrigin:true,

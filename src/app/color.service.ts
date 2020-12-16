@@ -13,7 +13,7 @@ to pass changes in preferences to app. (This could be done through chaining even
 })
 export class ColorService {
   darkMode: boolean;
-  //BehaviorSubject service implimentation taken from https://stackoverflow.com/questions/57636203/subscribe-to-observable-vs-subscribe-to-subject
+  //BehaviorSubject service implimentation idea from https://stackoverflow.com/questions/57636203/subscribe-to-observable-vs-subscribe-to-subject
   darkModeBehav: BehaviorSubject<boolean>
 
   constructor() {

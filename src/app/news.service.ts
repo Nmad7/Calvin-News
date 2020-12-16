@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { environment } from '../environments/environment';
@@ -14,15 +14,17 @@ export interface News {
   categories: Array<string>;
 }
 
+//NewsService connects other components to the REST API
 @Injectable({
   providedIn: 'root'
 })
 export class NewsService {
 
-  private endpoint:string = environment.apiUrl;
+  endpoint:string = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
-  private handleError(error: HttpErrorResponse): any {
+
+  handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);
     } else {
