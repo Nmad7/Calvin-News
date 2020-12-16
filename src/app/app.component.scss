@@ -12,7 +12,7 @@
 
 .main-section{
     position: absolute;
-    top: 160px;
+    top: 15vh;
     left: 0;
     right: 0;
     margin: auto;
@@ -41,9 +41,15 @@
 
 .title{
     position: relative;
-    top: 50px;
+    top: 4vh;
     text-align: center;
     color: white;
     font-family: 'IM Fell Double Pica';
     font-size: 60px;
 }
+
+@media only screen and (max-height: 500px) {
+    .title {
+      visibility: hidden;
+    }
+  }

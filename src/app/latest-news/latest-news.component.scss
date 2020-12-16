@@ -3,7 +3,8 @@
 }
 
 .container{
-    height:700px;
+    height:73vh;
+    overflow: hidden;
 }
 
 .title{
@@ -20,7 +21,7 @@
 }
 
 .infiniteScroll{
-    height: 678px;
+    height: 70vh;
     overflow-y: scroll;
     overflow-x: hidden;
 }
